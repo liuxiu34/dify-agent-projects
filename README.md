@@ -72,9 +72,10 @@ prompts/                   全部 LLM Prompt 留痕（诊断 5 套 + 报销 3 �
 > 诊断流知识库说明：知识库检索为多路召回 + 按异常类型 metadata 过滤；本仓库只含工作流与 Prompt，
 > 知识库文档为本地私有资料，未随仓库分发。
 
-## Demo（可选链接）
+## Demo
 
-- 报销 Agent 前端对话台（表单快速填单 + /api/chat 服务端代理）：_待补 pages.dev 链接_
+- 报销 Agent 前端对话台（表单快速填单，浏览器请求走同源 `/api/chat` 服务端代理，Key 不落前端）：https://expense-agent-web.pages.dev/
+- 报销 Agent 产品级对话入口（Dify 云端 Web 界面）：_待补_（当前以 API 直连验证为主）
 - Coze 知识库 Bot：_待补_
 
 ---
