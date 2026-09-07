@@ -1,0 +1,10 @@
+# 通用
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+
+# 不要放真实凭据/隐私进作品仓
+**/config.json
+*.key
+.env
