@@ -45,7 +45,7 @@
 | 指标 | 值 |
 |---|---|
 | 云端交付 | 2 套 Chatflow（诊断 26 节点 + 报销 24 节点，可导入 DSL） |
-| 回归验证 | 诊断 10/10 · 报销 12/12（v6.2 云端实测）+ 1 边界记录 |
+| 回归验证 | 诊断 10/10 · 报销 12/12（v6.3 云端实测）+ 1 边界记录 |
 | 评测集规模 | 500 条（正常 400 / 轻度异常 75 / 复杂异常 25） |
 | 成本控制 | 正常单 LLM 调用率 0%（L0 规则直通）；Token 93.2 万 → 18.7 万（省 80%） |
 | 发票/话术 | 发票 5 态矩阵（valid/suspicious/missing/conflict/declared_none），全链路无水单硬门槛 |
@@ -55,7 +55,12 @@
 ```
 dsl/                       可导入 Dify 的 DSL（导入 → 发布 → 即可用）
   ├─ java-web-diagnosis-agent.yml     诊断 Agent（26 节点）
-  └─ expense-precheck-agent.yml       报销 Agent（24 节点，v6.2）
+  └─ expense-precheck-agent.yml       报销 Agent（24 节点，v6.3）
+eval/                      评测体系（500 条评测集）
+  ├─ README-评测集设计说明.md         分布依据 / 边界值 / 标注口径 / 统计 SQL
+  ├─ eval-detail-500.json            500 条逐条明细（期望等级/实际结论/llm_calls/tokens）
+  ├─ generator.py                    评测集生成器（分布可控 + 边界值 + 同义改写）
+  └─ runner.py                       执行器（送真实链路落明细）
 evidence/
   ├─ screenshots/          回归截图（画布 + 各分支实测）
   ├─ regression-诊断.md
